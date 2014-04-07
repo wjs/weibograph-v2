@@ -1,8 +1,65 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+	margin: 0 0;
+	padding: 0 0;
 }
 
-a {
-  color: #00B7FF;
+#header {
+	height: 0;
+}
+#search {
+	position: relative;
+}
+#search-input {
+	width: 150px;
+	height: 30px;
+	margin: 5px 4px;
+	padding: 5px 5px;
+	border-radius: 10px;
+	border: none;
+	font-size: 120%;
+}
+
+#graph {
+	background: url(../images/firefox_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.link { 
+    stroke: #888; 
+    stroke-linejoin: bevel;
+}
+.nodetext {
+	fill: #fff;
+	font: 12px arial;
+    stroke-linejoin: bevel;
+}
+.circle {
+	width: 30px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#tooltipDiv {
+	position: absolute;
+	display: block;
+	z-index: 10000;
+	border: 2px solid black;
+	background-color: rgba(0,0,0,0.5);
+	margin: auto;
+	padding: 3px 5px 3px 5px;
+	color: white;
+	font-size: 12px;
+	font-family: arial;
+	border-radius: 5px;
+	vertical-align: middle;
+	text-align: left;
+	min-width: 50px;
+	overflow: auto;
+}
+#tooltipDiv img {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
 }

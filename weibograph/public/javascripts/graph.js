@@ -164,9 +164,10 @@ WeiboGraph.prototype.update = function() {
 
 
 function changeGraphAjax(uid) {
+	CURRENT_UID = uid;
 	$.ajax({
 		type: 'GET',
-		url: $SCRIPT_ROOT + '/graph',
+		url: '/graph',
 		contentType: 'application/json; charset=utf-8',
 		data: {'uid': uid},
 		success: function(data) {
@@ -190,7 +191,7 @@ function changeGraphAjax(uid) {
 				g_link_width = 200;
 			}
 			d3.select(document.getElementById("graph")).html('');
-			weiboGraph = new WeiboGraph('graph');
+			weiboGraph = getNewGraph();
 
 			// weiboGraph.clearNodes();
 			// weiboGraph.clearLinks();
@@ -222,5 +223,12 @@ function showToolTip(node, x, y, isShow) {
 	tooltipDiv.show();
 }
 
+function getNewGraph() {
+	$('#graph').css('width', (window.innerWidth-5)+'px');
+	$('#graph').css('height', (window.innerHeight-5)+'px');
+	return new WeiboGraph('graph');
+}
+
 /*-- Init global variable -----------------------------------------------------*/
-var weiboGraph = new WeiboGraph('graph');
+var weiboGraph = getNewGraph();
+var CURRENT_UID;

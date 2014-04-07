@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weibo Relation Graph</title>
+	<link rel="stylesheet" href="stylesheets/index.css">
+    <script src="javascripts/lib/jquery.min.js"></script>
+    <script src="javascripts/lib/d3.v3.min.js"></script>
+    <script src="javascripts/index.js"></script>
+	<script>
+        var $SCRIPT_ROOT = '';
+    </script>
+</head>
+<body>
+	<div id="header">
+		<div class="wrap">
+			<div id="branding">
+				<div class="logo"></div>
+				<div class="tagline">Weibo Relation Graph</div>
+			</div>
+			<ul class="nav">
+				<li class="selected"><a href="/">Home</a></li>
+				<li><a id="crawl-btn">Crawl</a></li>
+				<li><a>About</a></li>
+				<li>
+					<input type="search" name="search-input" id="search-input" placeholder="Search" list="search-result" autocomplete="off">
+					<datalist id="search-result"></datalist>
+				</li>
+				<div class="bubble-box" tabindex="0" hidefocus="true">
+					<input type="text" name="crawl_uid" id="crawl_uid" placeholder="uid for crawl">
+					<input type="text" name="username" id="username" placeholder="account">
+					<input type="password" name="pwd" id="pwd" placeholder="password">
+					<span id="bubble-box-error"></span>
+					<input type="button" value="Start Crawl" id="login-btn" onclick="crawl();">
+				</div>
+			</ul>
+		</div>
+	</div>
+	<hr class="hide">
+	<div id="body">
+		<div class="wrap">
+			<div id="graph"></div>
+		</div>
+	</div>
+	<div id="footer"></div>
+
+	<script src="javascripts/graph.js"></script>
+</body>
+</html>
